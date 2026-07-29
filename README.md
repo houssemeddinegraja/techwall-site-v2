@@ -1,4 +1,4 @@
-# TechWall — Site vitrine
+# TechWall
 
 Site vitrine statique pour [TechWall](https://www.youtube.com/@TechWall), une chaîne YouTube qui propose des cours gratuits en français sur le développement web, le mobile, le Big Data et la cybersécurité.
 
