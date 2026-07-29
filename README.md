@@ -34,23 +34,12 @@ Les données de chaque page (stats, catégories, membres de l'équipe, timeline,
 ├── support.js          # Runtime (généré, ne pas éditer)
 ├── CONTEXTE.md          # Notes de contexte du projet
 └── assets/
-    ├── logo.jpg         # Logo TechWall
+    ├── improved_logo.jpg # Logo TechWall
     ├── team/            # Photos des 3 fondateurs
     ├── playlists/       # Miniatures des playlists YouTube
     └── videos/          # Miniatures des vidéos mises en avant
 ```
 
-## Lancer en local
-
-Le runtime va re-fetcher la page courante (`fetch(location.href)`) pour rafraîchir le template, ce qui ne fonctionne pas en ouvrant le fichier directement (`file://`). Servez le dossier avec un serveur statique, par exemple :
-
-```bash
-python3 -m http.server 8000
-# ou
-npx serve .
-```
-
-Puis ouvrez `http://localhost:8000/index.html`.
 
 ## Contenu
 
