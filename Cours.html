@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="./assets/logo.jpg" type="image/jpeg">
+<link rel="icon" href="./assets/improved_logo.jpg" type="image/jpeg">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -21,7 +21,7 @@
 
   <header style="display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:1px solid oklch(0.30 0.02 260);position:sticky;top:0;background:oklch(0.16 0.014 260 / 0.92);backdrop-filter:blur(8px);z-index:10;">
     <div style="display:flex;align-items:center;gap:10px;">
-      <img src="./assets/logo.jpg" alt="Logo TechWall" style="width:34px;height:34px;border-radius:8px;object-fit:cover;">
+      <img src="./assets/improved_logo.jpg" alt="Logo TechWall" style="width:34px;height:34px;border-radius:8px;object-fit:cover;">
       <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.02em;">TechWall</span>
     </div>
     <nav style="display:flex;align-items:center;gap:36px;">
@@ -51,7 +51,7 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
         <sc-for list="{{ cat.courses }}" as="course" hint-placeholder-count="4">
-          <div style="background:oklch(0.20 0.016 260);border:1px solid oklch(0.30 0.02 260);border-radius:14px;overflow:hidden;">
+          <a href="{{ course.url }}" target="_blank" rel="noopener" style="display:block;color:inherit;text-decoration:none;background:oklch(0.20 0.016 260);border:1px solid oklch(0.30 0.02 260);border-radius:14px;overflow:hidden;transition:border-color .15s;">
             <sc-if value="{{ course.thumb }}">
               <img src="{{ course.thumb }}" alt="{{ course.title }}" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;">
             </sc-if>
@@ -64,7 +64,7 @@
               <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;line-height:1.35;margin-bottom:8px;">{{ course.title }}</div>
               <div style="font-size:13px;color:oklch(0.70 0.01 260);">{{ course.count }} vidéos · {{ course.views }} vues</div>
             </div>
-          </div>
+          </a>
         </sc-for>
       </div>
     </section>
@@ -80,7 +80,7 @@
 
   <footer style="border-top:1px solid oklch(0.30 0.02 260);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
     <div style="display:flex;align-items:center;gap:10px;">
-      <img src="./assets/logo.jpg" alt="Logo TechWall" style="width:28px;height:28px;border-radius:6px;object-fit:cover;">
+      <img src="./assets/improved_logo.jpg" alt="Logo TechWall" style="width:28px;height:28px;border-radius:6px;object-fit:cover;">
       <span style="font-size:13px;color:oklch(0.70 0.01 260);">© 2026 TechWall</span>
     </div>
     <div style="display:flex;gap:28px;">
@@ -100,34 +100,34 @@ class Component extends DCLogic {
   getCategories() {
     return [
       { id: "web", tag: "WEB", label: "Développement Web", color: "oklch(0.78 0.16 195)", count: 269, courses: [
-        { title: "Symfony 3.4", count: 81, views: "101,698", thumb: "./assets/playlists/symfony34.jpg" },
-        { title: "NestJs 7", count: 47, views: "119,596", thumb: "./assets/playlists/nestjs7.jpg" },
-        { title: "Angular 13 (12, 11, 10, 9, 8, 7) — Introduction et concepts avancés", count: 54, views: "373,728", thumb: "./assets/playlists/angular13.jpg" },
-        { title: "PHP", count: 31, views: "12,524", thumb: "./assets/playlists/php.jpg" },
-        { title: "POO PHP", count: 20, views: "6,460", thumb: "./assets/playlists/poophp.jpg" },
-        { title: "VueJs avec Symfony", count: 20, views: "17,604", thumb: "./assets/playlists/vuejssymfony.jpg" },
-        { title: "PHP — Gestion de bases de données avec PDO", count: 9, views: "4,108", thumb: "./assets/playlists/phppdo.jpg" },
-        { title: "Angular 9 (8, 7) — Drag and Drop", count: 5, views: "2,832", thumb: "./assets/playlists/angular9dragdrop.jpg" },
-        { title: "Angular Service Worker", count: 3, views: "2,300", thumb: "./assets/playlists/angularsw.jpg" },
-        { title: "PHP MVC et envoi de mail", count: 2, views: "1,325", thumb: "./assets/playlists/phpmvcmail.jpg" },
+        { title: "Symfony 3.4", count: 81, views: "101,698", thumb: "./assets/playlists/symfony34.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPb_rvLczpEp31I5iOm6CUnp" },
+        { title: "NestJs 7", count: 47, views: "119,596", thumb: "./assets/playlists/nestjs7.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZt6ay6iYT3uZaOMT_yUN-l" },
+        { title: "Angular 13 (12, 11, 10, 9, 8, 7) — Introduction et concepts avancés", count: 54, views: "373,728", thumb: "./assets/playlists/angular13.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPYNPElacumSgXXdzG0eSwjh" },
+        { title: "PHP", count: 31, views: "12,524", thumb: "./assets/playlists/php.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPav4uAWNafmw3dVufofU0nR" },
+        { title: "POO PHP", count: 20, views: "6,460", thumb: "./assets/playlists/poophp.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZ8vFpuA23r5ar97trMc6ok" },
+        { title: "VueJs avec Symfony", count: 20, views: "17,604", thumb: "./assets/playlists/vuejssymfony.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZ1ARMWsmhCYzlCEMZgTBes" },
+        { title: "PHP — Gestion de bases de données avec PDO", count: 9, views: "4,108", thumb: "./assets/playlists/phppdo.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPaOIQ6C037bV6b9haQTZw4U" },
+        { title: "Angular 9 (8, 7) — Drag and Drop", count: 5, views: "2,832", thumb: "./assets/playlists/angular9dragdrop.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPY-8x-cCpzIOLSahvjdhouy" },
+        { title: "Angular Service Worker", count: 3, views: "2,300", thumb: "./assets/playlists/angularsw.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPa1TllnirbhA4nyc25N7PFg" },
+        { title: "PHP MVC et envoi de mail", count: 2, views: "1,325", thumb: "./assets/playlists/phpmvcmail.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZmg-y8arX_BeG2o-AyIdKp" },
       ]},
       { id: "mobile", tag: "APP", label: "Développement Mobile", color: "oklch(0.72 0.16 300)", count: 33, courses: [
-        { title: "Android -1", count: 18, views: "9,462", thumb: "./assets/playlists/android1.jpg" },
-        { title: "Flutter", count: 10, views: "6,606", thumb: "./assets/playlists/flutter.jpg" },
-        { title: "Tic Tac Toe avec Flutter", count: 5, views: "2,123", thumb: "./assets/playlists/tictactoeflutter.jpg" },
+        { title: "Android -1", count: 18, views: "9,462", thumb: "./assets/playlists/android1.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZzhuxcwsZhxfIXeuF_ivxK" },
+        { title: "Flutter", count: 10, views: "6,606", thumb: "./assets/playlists/flutter.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPYPcfIIIUxhy56LAIn2rL7F" },
+        { title: "Tic Tac Toe avec Flutter", count: 5, views: "2,123", thumb: "./assets/playlists/tictactoeflutter.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPajhUs2PRlHPmue5pQ2c9cz" },
       ]},
       { id: "cyber", tag: "SEC", label: "Cybersécurité", color: "oklch(0.75 0.16 30)", count: 20, courses: [
-        { title: "Cybersecurity — pentest (Nmap, Legion, Shodan, ingénierie sociale, backdoors, SQLi)", count: 12, views: "38,179", thumb: null },
-        { title: "Sécurité offensive avec Python (bruteforce, keylogger, ransomware, 2FA)", count: 8, views: "24,722", thumb: null },
+        { title: "Cybersecurity — pentest (Nmap, Legion, Shodan, ingénierie sociale, backdoors, SQLi)", count: 12, views: "38,179", thumb: null, url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPbAyLnE27nhCd0c310Dlg6Y" },
+        { title: "Sécurité offensive avec Python (bruteforce, keylogger, ransomware, 2FA)", count: 8, views: "24,722", thumb: null, url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPavC9HpYkhpXWXSxqIqa5gI" },
       ]},
       { id: "data", tag: "DATA", label: "Big Data", color: "oklch(0.78 0.16 145)", count: 32, courses: [
-        { title: "Hadoop & Compagnie", count: 21, views: "113,642", thumb: "./assets/playlists/hadoop.jpg" },
-        { title: "Atelier Spark", count: 11, views: "33,891", thumb: "./assets/playlists/ateleirspark.jpg" },
+        { title: "Hadoop & Compagnie", count: 21, views: "113,642", thumb: "./assets/playlists/hadoop.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPYFvrqtQ6v6aJOV3ZHM84jm" },
+        { title: "Atelier Spark", count: 11, views: "33,891", thumb: "./assets/playlists/ateleirspark.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPaHpU5g1-iFyT72SACUmCv_" },
       ]},
       { id: "algo", tag: "CODE", label: "Algorithmique & autres langages", color: "oklch(0.75 0.16 250)", count: 73, courses: [
-        { title: "Algorithmique, structures de données et programmation C", count: 57, views: "132,255", thumb: "./assets/playlists/algoc.jpg" },
-        { title: "Microservices (Spring)", count: 7, views: "9,418", thumb: "./assets/playlists/microservices.jpg" },
-        { title: "Python 101 — Sudoku", count: 9, views: "3,309", thumb: "./assets/playlists/python101sudoku.jpg" },
+        { title: "Algorithmique, structures de données et programmation C", count: 57, views: "132,255", thumb: "./assets/playlists/algoc.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPboussUFWdDGmRclxlSPix_" },
+        { title: "Microservices (Spring)", count: 7, views: "9,418", thumb: "./assets/playlists/microservices.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPZW7vdr7fqT-p56-rAoWM6G" },
+        { title: "Python 101 — Sudoku", count: 9, views: "3,309", thumb: "./assets/playlists/python101sudoku.jpg", url: "https://www.youtube.com/playlist?list=PLl3CtU4THqPajnTLZnJOP-qKJWCK6OzS7" },
       ]},
     ];
   }
